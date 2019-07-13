@@ -1,0 +1,38 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+@import 'mixins';
+
+// Bootstrap
+//@import '~bootstrap/scss/bootstrap';
+
+.navbar-laravel {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+.admin-wrapper{
+  display: flex;
+  width: 100%;
+
+  @include breakpoint(tablet){
+    flex-wrap: wrap;
+  }
+}
+
+.admin-router{
+  position:absolute;
+  top:0;
+  left:17rem;
+  overflow-y: auto;
+  width: calc(100% - 17em);
+
+  @include breakpoint(tablet){
+    position:relative;
+    width:100%;
+    left:0;
+    height: 100vh;
+  }
+}

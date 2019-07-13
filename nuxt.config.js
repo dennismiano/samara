@@ -23,6 +23,9 @@ export default {
   ** Global CSS
   */
   css: [
+    //'@/assets/sass/app.scss',
+    "@/assets/sass/app.scss"
+    //'@/assets/sass/_mixins.scss'
   ],
   /*
   ** Plugins to load before mounting the App
@@ -50,6 +53,7 @@ export default {
     /*
     ** You can extend webpack config here
     */
+    extractCSS: true,
     extend(config, ctx) {
     }
   }
