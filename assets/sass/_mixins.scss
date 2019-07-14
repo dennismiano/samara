@@ -1,0 +1,202 @@
+//VARIABLES
+@import 'variables';
+
+//HOME MIXINS
+@mixin category{
+	background-size:cover;
+	background-position:center;
+	background-repeat:no-repeat;
+	padding:3rem;
+	flex:1;
+	margin:.5rem;
+	height:200px;
+
+	display:flex;
+	align-items:center;
+	justify-content:center;
+
+	&:first-child{
+		margin-left:0;
+	}
+	&:last-child{
+		margin-right:0;
+	}
+}
+
+@mixin register-section{
+	display: flex;
+	flex-flow:column nowrap;
+	justify-content: center;
+	align-items: center;
+	padding:5% 5%;
+
+	@include breakpoint(phablet){
+		padding:10%;
+	}
+
+	img{
+		width: 10rem;
+		height: auto;
+	}
+
+	p{
+		text-align: center;
+		font-size: 2rem;
+		line-height: 2rem;
+	}
+
+	a{
+		font-size: 2rem;
+	}
+}
+
+
+
+//ADMIN MIXINS
+@mixin primary-button($background-color, $text-color){
+	background-color:$background-color;
+	color:$text-color;
+	border:none;
+	padding:1rem 2rem;
+	border-radius: .5rem;
+
+	&:hover{
+		background-color:darken($background-color, 10);
+	}
+}
+
+@mixin system-button($background-color, $text-color){
+	height: 4rem;
+	background-color: $background-color;
+	color:$text-color;
+	border:none;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+@mixin form-inputs{
+	height: 4rem;
+	display: flex;
+	align-items: center;
+	padding-left: 1rem;
+	padding-right:1rem;
+	width:100%;
+	background-color: $light-gray;
+	border: 1px solid $gray;
+}
+
+@mixin breakpoint($point) {
+   @if $point == desktop {
+     @media (max-width: 70em) { @content ; }
+  }
+   @else if $point == laptop {
+     @media (max-width: 64em) { @content ; }
+  }
+    @else if $point == tablet {
+     @media (max-width: 50em) { @content ; }
+  }
+   @else if $point == phablet {
+     @media (max-width: 37.5em)  { @content ; }
+  }
+  @else if $point == mobileonly {
+     @media (max-width: 37.5em)  { @content ; }
+
+  }
+}
+
+@mixin admin-pages-header{
+	background-color: $white;
+	height: 30vh;
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+	padding: 5% 10%;
+}
+
+@mixin shop-form-wrapper{
+	background-color: $white;
+	padding:2rem;
+	border-bottom-left-radius:.5rem;
+	border-bottom-right-radius:.5rem;
+}
+
+@mixin switch-slider{
+	/* The switch - the box around the slider */
+	.switch {
+	 position: relative;
+	 display: inline-block;
+	 width: 60px;
+	 height: 34px;
+	}
+
+	/* Hide default HTML checkbox */
+	.switch input {
+	 opacity: 0;
+	 width: 0;
+	 height: 0;
+	}
+
+	/* The slider */
+	.slider {
+	 position: absolute;
+	 cursor: pointer;
+	 top: 0;
+	 left: 0;
+	 right: 0;
+	 bottom: 0;
+	 background-color: $gray;
+	 -webkit-transition: .4s;
+	 transition: .4s;
+	}
+
+	.slider:before {
+	 position: absolute;
+	 content: "";
+	 height: 26px;
+	 width: 26px;
+	 left: 4px;
+	 bottom: 4px;
+	 background-color:$secondary-color;
+	 -webkit-transition: .4s;
+	 transition: .4s;
+	}
+
+	input:checked + .slider {
+	 background-color: $primary-color;
+	}
+
+	input:focus + .slider {
+	 box-shadow: 0 0 1px $primary-color;
+	}
+
+	input:checked + .slider:before {
+	 -webkit-transform: translateX(26px);
+	 -ms-transform: translateX(26px);
+	 transform: translateX(26px);
+	}
+
+	/* Rounded sliders */
+	.slider.round {
+	 border-radius: 34px;
+	}
+
+	.slider.round:before {
+	 border-radius: 50%;
+	}
+}
+
+@mixin events-media-holder{
+	width:49%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 10rem;
+	background-color:darken($light-gray, 5);
+	padding-left:1rem;
+	padding-right:1rem;
+
+	&:last-child{
+		margin-left:2%;
+	}
+}
