@@ -7,8 +7,8 @@
 </template>
 
 <script>
-import AppHeader from '~/layouts/AppHeader.vue'
-import AppFooter from '~/layouts/AppFooter.vue'
+import AppHeader from '~/layouts/user/AppHeader.vue'
+import AppFooter from '~/layouts/user/AppFooter.vue'
 
 export default {
   components: {
