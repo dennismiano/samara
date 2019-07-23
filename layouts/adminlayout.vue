@@ -1,7 +1,7 @@
 <template>
-  <div>
-    <AdminMenu/>
-    <nuxt/>
+  <div class="admin-panel">
+    <AdminMenu class="admin-menu-wrapper"/>
+    <nuxt class="admin-contents" />
   </div>
 </template>
 
@@ -15,3 +15,16 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+  .admin-panel{
+    display: flex;
+    flex-flow: row nowrap;
+  }
+  .admin-menu-wrapper{
+    width:20%;
+  }
+  .admin-contents{
+    width:80%;
+  }
+</style>

@@ -15,12 +15,12 @@
 
 
       <div class="admin-menu-links" v-bind:style="{ display: display }">
-        <router-link to="/home" class="router-links-wrapper">
+        <nuxt-link to="/admin" class="router-links-wrapper">
     <!--DASHBOARD ICON SVG -->
             <svg id="Capa_1" class="admin-menu-icon" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><title>dashboard-icon</title><path d="M420,132.25a18.48,18.48,0,0,0-23.47-2.2c-27.65,18.84-166.32,113.6-181.22,128.5a55.43,55.43,0,0,0,78.39,78.39C308.6,322,403.36,183.36,422.2,155.72A18.48,18.48,0,0,0,420,132.25ZM267.56,310.81a18.48,18.48,0,0,1-26.13-26.13c5.79-5.72,45.16-33.8,93.6-67.47C301.36,265.65,273.29,305,267.56,310.81Z"/><path d="M103.21,383.68,80.4,394.81A198.62,198.62,0,0,1,67.94,226.9l26.14,12.54a18.48,18.48,0,1,0,16-33.32l-25.8-12.38A199.8,199.8,0,0,1,236,99v27.79a18.48,18.48,0,0,0,37,0V99a197.26,197.26,0,0,1,63.53,16.74,18.48,18.48,0,1,0,15.2-33.68A236.31,236.31,0,0,0,58.07,429a18.47,18.47,0,0,0,23.46,6.34l37.88-18.48a18.48,18.48,0,1,0-16.2-33.21Z"/><path d="M470.15,200.53a18.48,18.48,0,1,0-33.68,15.2,198.9,198.9,0,0,1-7.95,179.21l-23.81-11.34A18.48,18.48,0,0,0,388.83,417l38.8,18.48a18.47,18.47,0,0,0,23.3-6.41,235.94,235.94,0,0,0,19.22-228.5Z"/></svg>
       <!--MOBILE TOGGLE BUTTON SVG -->
             <p class="link-router"> Dashboard </p>
-        </router-link>
+        </nuxt-link>
 
 <!--
         <router-link to="/products" class="router-links-wrapper">
@@ -33,15 +33,15 @@
 
           <p class="link-router"> Shop</p>
         </router-link>
-
-          <router-link to="/view/messages" class="router-links-wrapper">
+-->
+          <nuxt-link to="/admin/messages" class="router-links-wrapper">
 
               <svg id="Capa_1" class="admin-menu-icon" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><title>messages-icon</title><path d="M419.85,91.47H103.3C76.13,91.47,54,112.69,54,138.78V359.42c0,26.09,22.1,47.31,49.27,47.31H419.85c27.17,0,49.27-21.22,49.27-47.31V138.78C469.11,112.69,447,91.47,419.85,91.47Zm0,273.5H103.3c-4,0-7.5-2.59-7.5-5.54V168L239,288.83a16.31,16.31,0,0,0,10.51,3.84h24.18a16.32,16.32,0,0,0,10.51-3.84L427.34,168V359.42C427.34,362.37,423.84,365,419.85,365ZM261.57,251.2l-139.25-118h278.5Z"/></svg>
 
                  <p class="link-router">Messages</p>
-          </router-link>
+          </nuxt-link>
 
--->
+
         </div>
 
 
@@ -90,8 +90,6 @@
 
 
   .admin-menu-wrapper{
-    width: 17rem;
-    position: fixed;
     overflow-y: auto;
 
     @include breakpoint(tablet){
