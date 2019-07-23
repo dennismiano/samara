@@ -128,6 +128,7 @@
             height: 4rem;
           }
       }
+    }
 
       .menu-icons{
 
@@ -178,18 +179,10 @@
         }
 
         .mobile-menu-icon{
-          min-width:3.2rem;
-          max-width: 3.2rem;
+          width:3.2rem;
           height: auto;
-          display: none;
+          fill:$primary-color;
           cursor: pointer;
-
-          .cls-1{
-            fill: $primary-color;
-          }
-          .cls-2{
-            fill:#fff;
-          }
 
           @include breakpoint(tablet){
             display: block;
@@ -197,7 +190,7 @@
         }
       }
 
-    }
+
 
 
       @include breakpoint(tablet){
@@ -272,7 +265,7 @@
       <div class="menu-contents-wrapper">
 
           <div class="logo">
-              <router-link to="/" class="site-link"><img class="logo-icon" src="/svg/logo.svg"></router-link>
+              <nuxt-link to="/" class="site-link"><img class="logo-icon" src="~/assets/svg/logo.svg"></nuxt-link>
           </div>
 
           <div class="search-bar">
@@ -287,8 +280,7 @@
             </div></router-link>
 -->
 
-            <svg v-if="toggle_open" id="Layer_1" class="mobile-menu-icon" @click="toggleMenu(), toggleOpen()" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 93.6 90.1"><title>mobile-icon</title><path class="cls-1" d="M16.15,8.2H79.45A5.68,5.68,0,0,1,85,14V76.08a5.68,5.68,0,0,1-5.53,5.82H16.15a5.68,5.68,0,0,1-5.53-5.82V14A5.68,5.68,0,0,1,16.15,8.2Z"/><path class="cls-2" d="M71,29.77H24.6a4.51,4.51,0,0,1,0-9H71a4.51,4.51,0,1,1,0,9Z"/><path class="cls-2" d="M71,50.07H24.6a4.51,4.51,0,0,1,0-9H71a4.51,4.51,0,1,1,0,9Z"/><path class="cls-2" d="M71,70.36H24.6a4.51,4.51,0,0,1,0-9H71a4.51,4.51,0,0,1,0,9Z"/>
-            </svg>
+            <svg class="mobile-menu-icon" v-if="toggle_open" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><title>hamburg</title><rect x="80" y="79" width="370" height="52"/><rect x="80" y="235.5" width="370" height="52"/><rect x="80" y="392" width="370" height="52"/></svg>
 
             <svg v-if="toggle_close" id="Layer_1" class="mobile-menu-icon2" @click="toggleMenu(), toggleClose()" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 93.6 90.1"><title>menu-close</title><circle class="cls-1" cx="46.96" cy="44.56" r="39.13"/><path class="cls-2" d="M57.21,28,47,38.2,36.29,27.53a4.51,4.51,0,0,0-6.36,6.36L40.6,44.57,29.93,55.24a4.51,4.51,0,0,0,6.36,6.36L47,50.93,57.21,61.17a4.51,4.51,0,1,0,6.36-6.36L53.32,44.57,63.57,34.32A4.51,4.51,0,1,0,57.21,28Z"/></svg>
           </div>
@@ -296,10 +288,7 @@
 
       <div class="site-links hideClass" v-bind:style="{ display: display }">
         <router-link to="/" class="site-link">  home </router-link>
-        <router-link to="/products" class="site-link">products </router-link>
-        <router-link to="/poultry-farming" class="site-link"> poultry farming </router-link>
         <router-link to="/blog" class="site-link"> contact us </router-link>
-        <!--<router-link :to="{ name: 'BlogPage', params: { guest } }" class="site-link">blog</router-link>-->
       </div>
     </div>
   </div>

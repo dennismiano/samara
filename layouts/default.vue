@@ -2,17 +2,20 @@
   <div>
     <AppHeader/>
     <nuxt />
+    <SubscriberForm/>
     <AppFooter/>
   </div>
 </template>
 
 <script>
 import AppHeader from '~/layouts/user/AppHeader.vue'
+import SubscriberForm from '~/components/base/SubscriberForm.vue'
 import AppFooter from '~/layouts/user/AppFooter.vue'
 
 export default {
   components: {
     AppHeader,
+    SubscriberForm,
     AppFooter
   }
 }
