@@ -1,6 +1,6 @@
 <template>
     <div class="dashboard-container">
-        <!-- <img src="/svg/dashboard-image.svg">-->
+        <img class="dashboard-image" src="~/assets/svg/dashboard-image.svg">
         <h1>Admin Dashboard</h1>
         <p>This dashboard helps you, as the owner of the website to manage content on the website with increadible ease. Here, you can add, edit, delete, and share content on your website without much hustle.</p>
     </div>
@@ -35,6 +35,15 @@
 
       @include breakpoint(tablet){
         width:15rem;
+      }
+    }
+
+    .dashboard-image{
+      width:15rem;
+      height: auto;
+
+      @include breakpoint(tablet){
+        width:10rem;
       }
     }
 

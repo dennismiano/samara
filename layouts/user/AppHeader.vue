@@ -183,6 +183,7 @@
           height: auto;
           fill:$primary-color;
           cursor: pointer;
+          display: none;
 
           @include breakpoint(tablet){
             display: block;
@@ -272,15 +273,16 @@
             <input type="text" class="search-field" placeholder="search"/>
             <button class="search-button">Search</button>
           </div>
-<!--
+
           <div class="menu-icons">
+  <!--
             <router-link to="shopping-cart"><div class="cart-details">
               <svg id="Layer_1" class="cart-icon" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 46.84 45.33"><title>cart</title><path d="M15.17,34.56a4,4,0,1,0,4,4A4,4,0,0,0,15.17,34.56Zm-12-32v4h4l7.19,15.19-2.8,4.8a7.22,7.22,0,0,0-.4,2,4,4,0,0,0,4,4h24v-4H16a.42.42,0,0,1-.4-.4v-.2l1.8-3.4h14.8a3.66,3.66,0,0,0,3.4-2l7.2-13a1.11,1.11,0,0,0,.4-1,1.89,1.89,0,0,0-1.77-2H11.57l-1.79-4Zm32,32a4,4,0,1,0,4,4A4,4,0,0,0,35.17,34.56Z"/></svg>
               <p class="cart-badge">{{ inCart.length }}</p>
             </div></router-link>
 -->
 
-            <svg class="mobile-menu-icon" v-if="toggle_open" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><title>hamburg</title><rect x="80" y="79" width="370" height="52"/><rect x="80" y="235.5" width="370" height="52"/><rect x="80" y="392" width="370" height="52"/></svg>
+            <svg class="mobile-menu-icon" v-if="toggle_open" @click="toggleMenu(), toggleClose()" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><title>hamburg</title><rect x="80" y="79" width="370" height="52"/><rect x="80" y="235.5" width="370" height="52"/><rect x="80" y="392" width="370" height="52"/></svg>
 
             <svg v-if="toggle_close" id="Layer_1" class="mobile-menu-icon2" @click="toggleMenu(), toggleClose()" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 93.6 90.1"><title>menu-close</title><circle class="cls-1" cx="46.96" cy="44.56" r="39.13"/><path class="cls-2" d="M57.21,28,47,38.2,36.29,27.53a4.51,4.51,0,0,0-6.36,6.36L40.6,44.57,29.93,55.24a4.51,4.51,0,0,0,6.36,6.36L47,50.93,57.21,61.17a4.51,4.51,0,1,0,6.36-6.36L53.32,44.57,63.57,34.32A4.51,4.51,0,1,0,57.21,28Z"/></svg>
           </div>
