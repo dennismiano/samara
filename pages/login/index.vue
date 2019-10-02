@@ -2,26 +2,18 @@
     <div class="login-form-wrapper">
       <div class="form-wrapper">
         <h3>Login before you proceed</h3>
-
-        <div class="form">
-          <div class="form-group">
-            <input type="email" placeholder="email" v-model="login_details.username">
-          </div>
-
-          <div class="form-group">
-            <input type="password" placeholder="password" v-model="login_details.password">
-          </div>
-
-          <div class="form-group">
-            <button>Login</button>
-          </div>
-        </div>
+        <LoginForm/>
       </div>
     </div>
 </template>
 
 <script>
+  import LoginForm from '~/components/base/Login.vue'
+
   export default{
+    components:{
+      LoginForm
+    },
     data(){
       return{
         login_details:{
@@ -63,37 +55,6 @@
 
     h3{
       margin-bottom: 1rem;
-    }
-  }
-
-  .form-group{
-    display: flex;
-  }
-
-  .form{
-    width:100%;
-    display: flex;
-    flex-flow: column;
-
-    input{
-      @include form-inputs;
-      height: 3rem;
-    }
-
-    input[type=text]{
-
-    }
-
-    input[type=password]{
-      border-top: none;
-      margin-bottom: 1rem;
-    }
-
-    button{
-      @include system-button($primary-color, $white);
-      padding-left:2rem;
-      padding-right: 2rem;
-      height: 3rem;
     }
   }
 </style>
