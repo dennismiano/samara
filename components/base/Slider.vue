@@ -3,16 +3,23 @@
       <div class="slides" v-for="number in [currentNumber]"  :key='number' @mouseover="stopSlider" @mouseleave="startSlider">
 
           <div class="slide" :style="{ backgroundImage: 'url('+ currentSlide.img + ')'}">
-          <div class="slider-content-wrapper">
+            <div class="slide-bg-transition">
+            </div>
 
             <div class="slider-content-wrapper-text">
-              <h3> {{ currentSlide.h3 }} </h3>
+              <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="m256 0c-140.96875 0-256 115.050781-256 256 0 140.96875 115.050781 256 256 256 140.96875 0 256-115.050781 256-256 0-140.96875-115.050781-256-256-256zm0 482c-124.617188 0-226-101.382812-226-226s101.382812-226 226-226 226 101.382812 226 226-101.382812 226-226 226zm0 0"/>
+                <path d="m181 404.027344 222.042969-148.027344-222.042969-148.027344zm30-240 137.957031 91.972656-137.957031 91.972656zm0 0"/>
+              </svg>
+
+              <div class="slider-text">
+                <h4> {{ currentSlide.h4 }} </h4>
+                <p>{{ currentSlide.p }}</p>
+              </div>
 
               <div class="slider-content-wrapper-text-bg">
               </div>
             </div>
 
-          </div>
         </div>
 
 
@@ -20,10 +27,16 @@
 
       <div class="nav-icons">
         <a @click="prev">
-            <svg id="Capa_1" class="button-prev" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60.88 90.5"><title>arrow-right</title><path class="cls-1" d="M15.91,88.28,8.84,81.21,27.63,45.5,8.84,9.79l7.07-7.07L55.15,42a5,5,0,0,1,0,7.07Z"/></svg>
+          <svg class="button-prev" id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+            <title>next</title><circle class="cls-1" cx="256" cy="256" r="251"/>
+            <path class="cls-2" d="M276,239.34,156.06,149.39V362.61L276,272.66v76.62h80V162.72H276Zm-93.28,70V202.7L253.78,256ZM302.64,189.37h26.65V322.63H302.64Z"/>
+          </svg>
         </a>
         <a @click="next">
-            <svg id="Capa_1" class="button-next" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60.88 90.5"><title>arrow-right</title><path class="cls-1" d="M15.91,88.28,8.84,81.21,27.63,45.5,8.84,9.79l7.07-7.07L55.15,42a5,5,0,0,1,0,7.07Z"/></svg>
+          <svg class="button-next" id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+            <title>next</title><circle class="cls-1" cx="256" cy="256" r="251"/>
+            <path class="cls-2" d="M276,239.34,156.06,149.39V362.61L276,272.66v76.62h80V162.72H276Zm-93.28,70V202.7L253.78,256ZM302.64,189.37h26.65V322.63H302.64Z"/>
+          </svg>
         </a>
       </div>
     </div>
@@ -37,23 +50,27 @@
 
           slides: [
             {
-              'h3': 'AMAZING DEALS ON ELECTRONICS',
-              'img': '/img/home-slider.jpg'
+              'h4': 'Walk With Me Lord',
+              'p': 'John Munyesi',
+              'img': '/img/cover1.jpg'
             },
 
             {
-              'h3': 'FURNITURE',
-              'img': '/img/slider2.jpg'
+              'h4': 'In Jesus Steps',
+              'p': 'Carol Wainaina',
+              'img': '/img/cover2.jpg'
             },
 
             {
-              'h3': 'HOME & OFFICE APPLICANCES',
-              'img': '/img/slider3.jpg'
+              'h4': 'Here I Am. Send Me.',
+              'p': 'Carol Wainaina',
+              'img': '/img/cover1.jpg'
             },
 
             {
-              'h3': 'ALCOHOL',
-              'img': '/img/slide4.jpg'
+              'h4': 'Agape Love',
+              'p': 'Mista C',
+              'img': '/img/cover2.jpg'
             }
 /*
             'http://i.imgur.com/vYdoAKu.jpg',
@@ -130,10 +147,16 @@
 
 <style lang="scss" scoped>
 
-@import "~/assets/sass/app.scss";
+    @import "~/assets/sass/app.scss";
+
+    h1,h1,h3,h4,h5,h5,li,p{
+      font-family:$primary-font;
+      margin:0;
+    }
+
 
   .slider-wrapper{
-    height:60vh;
+    height:40vh;
     position: relative;
     background-color: #989898;
 
@@ -146,29 +169,22 @@
       display: flex;
       background-position: center;
       background-size: cover;
-      justify-content: center;
+      justify-content: flex-end;
       background-image: url(/img/home-slider.jpg);
-      align-items: center;
+      align-items: flex-start;
       flex-flow:column;
       font-family: $source-pro;
-      height: 60vh;
-    }
-
-    .slider-content-wrapper{
+      height: 40vh;
       position: relative;
-      padding: 2rem;
-      width: 80%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
 
-
-      @include breakpoint(tablet){
-        width: 80%;
-      }
-
-      @include breakpoint(mobileonly){
-        width: 90%;
+      .slide-bg-transition{
+        position: absolute;
+        bottom:0;
+        right: 0;
+        width: 100%;
+        background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 0%, rgba(0,0,0,0.9864146342130602) 36%, rgba(0,0,0,0.8771709367340687) 53%, rgba(0,0,0,0.34215693113182777) 85%, rgba(0,0,0,0) 100%);
+        height: 50%;
+        opacity: .7;
       }
     }
 
@@ -177,9 +193,16 @@
       z-index: 999;
       width: 60%;
       padding: 2rem;
+      height: 100%;
       display: flex;
-      align-items: center;
-      justify-content: center;
+      align-items: flex-end;
+      justify-content: flex-start;
+
+      svg{
+        fill: $secondary-color;
+        width: 3rem;
+        height: 3rem;
+      }
 
       @include breakpoint(phablet){
         height: 15rem;
@@ -187,34 +210,35 @@
       }
 
 
-      h3{
-        font-size: 4em;
-        line-height: 4rem;
-        color:$white;
-        font-weight: 700;
-        text-align: center;
+      .slider-text{
+          margin-left: 1rem;
 
-        @include breakpoint(tablet){
-          font-size: 3rem;
+        h4{
+          font-size: 1.6em;
+          line-height: 1.7rem;
+          color:$white;
+          font-weight: 400;
+
+          @include breakpoint(tablet){
+            font-size: 3rem;
+          }
+
+          @include breakpoint(phablet){
+            font-size: 3rem;
+          }
+
+          @include breakpoint(mobileonly){
+            font-size: 1.7rem;
+            line-height: 1.8rem;
+          }
         }
 
-        @include breakpoint(phablet){
-          font-size: 3rem;
-        }
+        p{
+          color:$white;
 
-        @include breakpoint(mobileonly){
-          font-size: 3rem;
-            line-height: 3rem;
-        }
-      }
-
-      p{
-        font-size: 2rem;
-        color:$white;
-        text-align: center;
-
-        @include breakpoint(phablet){
-          font-size: $primary-font-size;
+          @include breakpoint(phablet){
+            font-size: $primary-font-size;
+          }
         }
       }
 
@@ -246,7 +270,14 @@
 
 
     .button-next, .button-prev{
-      fill:#fff;
+
+      .cls-1{
+        fill:$secondary-color;
+      }
+      .cls-2{
+        fill:$primary-color;
+      }
+
       height: 3rem;
       width:auto;
       cursor: pointer;
@@ -259,10 +290,10 @@
       position: absolute;
       top:50%;
       margin-top:-1.5rem;
-      right: 2rem;
+      right: -1.5rem;
 
       @include breakpoint(phablet){
-          right: 1rem;
+          right: -1.5rem;
       }
     }
 
@@ -270,11 +301,11 @@
       position: absolute;
       top:50%;
       margin-top:-1.5rem;
-      left: 2rem;
+      left: -1.5rem;
       transform:scaleX(-1);
 
       @include breakpoint(phablet){
-          left: 1rem;
+          left: -1.5rem;
       }
     }
 

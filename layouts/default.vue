@@ -1,16 +1,20 @@
 <template>
   <div>
-    <AppHeader/>
-    <nuxt />
-    <SubscriberForm/>
-    <AppFooter/>
+    <div class="mainpage">
+      <AppHeader class="app-menu" />
+
+      <nuxt class="app-body" />
+      <!--
+      <AppFooter class="app-footer" />
+    -->
+    </div>
   </div>
 </template>
 
 <script>
-import AppHeader from '~/layouts/user/AppHeader.vue'
+import AppHeader from '~/components/menu/AppHeader.vue'
 import SubscriberForm from '~/components/base/SubscriberForm.vue'
-import AppFooter from '~/layouts/user/AppFooter.vue'
+import AppFooter from '~/components/menu/AppFooter.vue'
 
 export default {
   components: {
@@ -21,21 +25,35 @@ export default {
 }
 </script>
 
-<style>
-html {
-  font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    Roboto, 'Helvetica Neue', Arial, sans-serif;
-  font-size: 16px;
-  word-spacing: 1px;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  box-sizing: border-box;
+<style lang="scss" scoped>
+
+@import "~/assets/sass/app.scss";
+
+h1,h1,h3,h4,h5,h5,li,p{
+  font-family:$primary-font;
+  margin:0;
 }
 
 body{
   margin:0;
+}
+
+.mainpage{
+  position: relative;
+  margin:0;
+
+  .app-body{
+
+  }
+
+  .app-footer{
+    position: fixed;
+    bottom: 0;
+    left:0;
+    width: 100%;
+    background-color: $secondary-color;
+    height: 4rem;
+  }
 }
 
 
