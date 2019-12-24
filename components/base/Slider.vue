@@ -7,13 +7,10 @@
             </div>
 
             <div class="slider-content-wrapper-text">
-              <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="m256 0c-140.96875 0-256 115.050781-256 256 0 140.96875 115.050781 256 256 256 140.96875 0 256-115.050781 256-256 0-140.96875-115.050781-256-256-256zm0 482c-124.617188 0-226-101.382812-226-226s101.382812-226 226-226 226 101.382812 226 226-101.382812 226-226 226zm0 0"/>
-                <path d="m181 404.027344 222.042969-148.027344-222.042969-148.027344zm30-240 137.957031 91.972656-137.957031 91.972656zm0 0"/>
-              </svg>
-
               <div class="slider-text">
-                <h4> {{ currentSlide.h4 }} </h4>
-                <p>{{ currentSlide.p }}</p>
+                <h2> The Samara Estate </h2>
+                <p> An Assurance Of Quality Living! </p>
+                <button @click="openBookingModal()">BOOK UNIT</button>
               </div>
 
               <div class="slider-content-wrapper-text-bg">
@@ -24,7 +21,7 @@
 
 
       </div>
-
+<!--
       <div class="nav-icons">
         <a @click="prev">
           <svg class="button-prev" id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
@@ -39,6 +36,8 @@
           </svg>
         </a>
       </div>
+    -->
+
     </div>
 </template>
 
@@ -52,7 +51,7 @@
             {
               'h4': 'Walk With Me Lord',
               'p': 'John Munyesi',
-              'img': '/img/cover1.jpg'
+              'img': '/img/slider1.jpg'
             },
 
             {
@@ -120,6 +119,10 @@
 
          prev() {
            this.currentNumber -= 1
+         },
+
+         openBookingModal(){
+           this.$store.commit('status/openBookingModal')
          }
 
 
@@ -139,7 +142,7 @@
         },
 
         mounted() {
-            this.startSlider();
+            //this.startSlider();
             console.log('Component mounted.')
         }
     }
@@ -156,26 +159,31 @@
 
 
   .slider-wrapper{
-    height:40vh;
+    height:80vh;
     position: relative;
     background-color: #989898;
 
     @include breakpoint(tablet){
       margin-left: 0;
       margin-right:0;
+      height:60vh;
     }
 
     .slide{
       display: flex;
-      background-position: center;
+      background-position: right center;
       background-size: cover;
       justify-content: flex-end;
       background-image: url(/img/home-slider.jpg);
       align-items: flex-start;
       flex-flow:column;
       font-family: $source-pro;
-      height: 40vh;
+      height: 80vh;
       position: relative;
+
+      @include breakpoint(tablet){
+        height:60vh;
+      }
 
       .slide-bg-transition{
         position: absolute;
@@ -190,13 +198,12 @@
 
     .slider-content-wrapper-text{
       position: relative;
-      z-index: 999;
+      z-index: 9;
       width: 60%;
       padding: 2rem;
       height: 100%;
       display: flex;
-      align-items: flex-end;
-      justify-content: flex-start;
+      align-items: center;
 
       svg{
         fill: $secondary-color;
@@ -211,13 +218,13 @@
 
 
       .slider-text{
-          margin-left: 1rem;
+          margin-left: 5%;
 
-        h4{
-          font-size: 1.6em;
-          line-height: 1.7rem;
+        h2{
+          font-size: 3rem;
+          line-height: 3.2rem;
           color:$white;
-          font-weight: 400;
+          font-weight: 700;
 
           @include breakpoint(tablet){
             font-size: 3rem;
@@ -235,10 +242,15 @@
 
         p{
           color:$white;
+          font-size: 2rem;
 
           @include breakpoint(phablet){
             font-size: $primary-font-size;
           }
+        }
+
+        button{
+          @include system-button($white, $primary-color);
         }
       }
 

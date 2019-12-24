@@ -1,13 +1,10 @@
 <template>
-  <div>
-    <div class="mainpage">
-      <AppHeader class="app-menu" />
-
-      <nuxt class="app-body" />
-      <!--
-      <AppFooter class="app-footer" />
-    -->
-    </div>
+  <div id="app">
+      <div class="mainpage">
+        <AppHeader class="app-menu" />
+        <nuxt class="app-body" />
+        <AppFooter class="app-footer" />
+      </div>
   </div>
 </template>
 
@@ -43,16 +40,7 @@ body{
   margin:0;
 
   .app-body{
-
-  }
-
-  .app-footer{
-    position: fixed;
-    bottom: 0;
-    left:0;
-    width: 100%;
-    background-color: $secondary-color;
-    height: 4rem;
+    margin:0;
   }
 }
 
