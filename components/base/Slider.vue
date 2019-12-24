@@ -8,8 +8,8 @@
 
             <div class="slider-content-wrapper-text">
               <div class="slider-text">
-                <h2> The Samara Estate </h2>
-                <p> An Assurance Of Quality Living! </p>
+                <h2> {{ currentSlide.h2 }} </h2>
+                <p> {{ currentSlide.p }} </p>
                 <button @click="openBookingModal()">BOOK UNIT</button>
               </div>
 
@@ -49,28 +49,23 @@
 
           slides: [
             {
-              'h4': 'Walk With Me Lord',
-              'p': 'John Munyesi',
+              'h2': 'The Samara Estate',
+              'p': 'An assurance of quality living',
               'img': '/img/slider1.jpg'
             },
 
             {
-              'h4': 'In Jesus Steps',
-              'p': 'Carol Wainaina',
-              'img': '/img/cover2.jpg'
+              'h2': 'Sports Recreational Facilities',
+              'p': 'property boasts of a modern gym facility within the shopping mall ',
+              'img': '/img/slider2.jpg'
             },
 
             {
-              'h4': 'Here I Am. Send Me.',
-              'p': 'Carol Wainaina',
-              'img': '/img/cover1.jpg'
+              'h2': 'The Landscaping',
+              'p': 'incorporates the finest aspects of luscious green grass, scattered trees and beautiful architecture.',
+              'img': '/img/slider3.jpg'
             },
 
-            {
-              'h4': 'Agape Love',
-              'p': 'Mista C',
-              'img': '/img/cover2.jpg'
-            }
 /*
             'http://i.imgur.com/vYdoAKu.jpg',
             'http://i.imgur.com/PUD9HQL.jpg',
@@ -142,7 +137,7 @@
         },
 
         mounted() {
-            //this.startSlider();
+            this.startSlider();
             console.log('Component mounted.')
         }
     }
@@ -152,7 +147,7 @@
 
     @import "~/assets/sass/app.scss";
 
-    h1,h1,h3,h4,h5,h5,li,p{
+    h1,h2,h3,h4,h5,h5,li,p{
       font-family:$primary-font;
       margin:0;
     }
@@ -200,10 +195,9 @@
       position: relative;
       z-index: 9;
       width: 60%;
-      padding: 2rem;
       height: 100%;
       display: flex;
-      align-items: center;
+      align-items: flex-end;
 
       svg{
         fill: $secondary-color;
@@ -212,13 +206,14 @@
       }
 
       @include breakpoint(phablet){
-        height: 15rem;
-        width: 15rem;
+        width:100%;
       }
 
 
       .slider-text{
           margin-left: 5%;
+          margin-bottom: 5rem;
+          margin-right: 5%;
 
         h2{
           font-size: 3rem;
@@ -242,7 +237,8 @@
 
         p{
           color:$white;
-          font-size: 2rem;
+          margin-bottom: 1rem;
+          line-height: 1.3rem;
 
           @include breakpoint(phablet){
             font-size: $primary-font-size;
