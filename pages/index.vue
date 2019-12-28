@@ -68,7 +68,7 @@
                     </div>
                 </div>
                 <div class="more-amenities">
-                  <nuxt-link to="/"><p>View all amenities</p></nuxt-link>
+                  <nuxt-link to="/amenities"><p>View all amenities</p></nuxt-link>
                 </div>
 
             </div>
@@ -260,6 +260,8 @@ export default {
               .amenity-icon{
                 display: flex;
                 align-items: center;
+                background-color: $white;
+                border-radius: 50%;
 
                 .amenity-icon-image{
                   width:3.5rem;
