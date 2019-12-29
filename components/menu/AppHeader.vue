@@ -29,7 +29,7 @@
       </div>
 
       <div class="logo">
-        <img class="logo-icon" src="/svg/logo.svg">
+        <img @click="goToHome()" class="logo-icon" src="/svg/logo.svg">
 
         <div  class="mobile-icon">
           <svg v-if="toggle_open"  @click="toggleMenu()" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -56,7 +56,7 @@
 
       <div class="links" v-bind:style="{ display: display }">
           <h3>MENU</h3>
-          <p @click="toggleMenu()">HOME</p>
+          <p @click="toggleMenu(), goToHome()">HOME</p>
           <p @click="toggleMenu()">ABOUT MIGAA</p>
           <button @click="toggleMenu(), toggleModal()">BOOK UNIT</button>
       </div>
@@ -90,6 +90,9 @@
       },
 
       methods:{
+        goToHome(){
+          this.$router.replace('/')
+        },
         toggleMenu(){
           const mq = window.matchMedia( "(min-width: 50em)" );
 
