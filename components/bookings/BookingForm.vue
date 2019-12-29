@@ -33,7 +33,7 @@
                   <label>Name:</label>
 
                   <div class="form-group">
-                    <input type="text" placeholder="name">
+                    <input type="text" placeholder="name" v-model="booking_details.name">
                   </div>
                 </div>
 
@@ -41,7 +41,7 @@
                   <label>Email:</label>
 
                   <div class="form-group">
-                    <input type="text" placeholder="email">
+                    <input type="text" placeholder="email" v-model="booking_details.email">
                   </div>
                 </div>
 
@@ -49,7 +49,7 @@
                   <label>Phone Number:</label>
 
                   <div class="form-group">
-                    <input type="text" placeholder="phone-number">
+                    <input type="text" placeholder="phone-number" v-model="booking_details.phone_number">
                   </div>
                 </div>
 
@@ -59,7 +59,7 @@
                 </div>
 
                 <div class="book-button">
-                    <button>Complete Booking</button>
+                    <button type="button" @click.prevent="addBooking">Complete Booking</button>
                 </div>
             </div>
 
@@ -73,10 +73,43 @@
 </template>
 
 <script>
+import axios from '~/plugins/axios.js';
   export default{
+    data(){
+      return {
+        booking_details:{
+          name:'',
+          email:'',
+          phone_number:'',
+          unit:'3 br'
+        }
+      };
+
+    },
     methods:{
       closeModal(){
         this.$store.commit('status/closeBookingModal');
+      }
+      ,addBooking(){
+        return axios.post('/house/add/booking',{details:this.booking_details}).then((res)=>{
+          if (res.data.msg) {
+            alert(res.data.msg);
+
+          }
+          if (res.data.error) {
+            console.log('error',res.data.error);
+
+          }
+
+        }).catch( (e)=>{
+          console.log('e',e);
+
+        } ).finally( ()=>{
+
+
+
+        } );
+
       }
     }
   }

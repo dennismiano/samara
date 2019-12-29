@@ -7,7 +7,7 @@
 
 <script>
 
-import AdminMenu from '~/layouts/admin/AdminMenu.vue'
+import AdminMenu from '~/layouts/Admin/AdminMenu.vue'
 
 export default {
   components: {

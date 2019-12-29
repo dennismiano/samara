@@ -12,6 +12,7 @@
 </template>
 
 <script>
+import axios from '~/plugins/axios.js';
     export default {
       data(){
         return{
@@ -29,7 +30,7 @@
           console.log('details is');
           console.log(this.messageDetails);
 
-           window.axios.post('/api/message/new/message',this.messageDetails).then(response=>{
+          return axios.post('/message/new/message',this.messageDetails).then(response=>{
               console.log(response.data);
               if (response.data.msg) {
                   this.messageDetails.email='';

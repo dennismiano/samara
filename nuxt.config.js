@@ -1,6 +1,9 @@
 
 export default {
   mode: 'universal',
+  env: {
+    baseUrl:  'http://generic.com/api'
+  },
   /*
   ** Headers of the page
   */
