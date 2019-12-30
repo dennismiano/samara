@@ -2,7 +2,7 @@
 export default {
   mode: 'universal',
   env: {
-    baseUrl:  'http://generic.com/api'
+    baseUrl:  'https://web.samara.sharubati.com/api'
   },
   /*
   ** Headers of the page
