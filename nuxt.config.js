@@ -1,6 +1,9 @@
 
 export default {
   mode: 'universal',
+  env: {
+    baseUrl:  'https://web.samara.sharubati.com/api'
+  },
   /*
   ** Headers of the page
   */
