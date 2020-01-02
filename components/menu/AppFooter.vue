@@ -162,6 +162,12 @@ import ContactForm from '~/components/base/ContactForm.vue'
         p{
           color:$white;
           padding-right: 2rem;
+
+          @include breakpoint(phablet){
+            padding-right: 0;
+            font-size: .9rem;
+            line-height: 1.2rem;
+          }
         }
         .footer-contacts{
           margin-top: 1rem;
@@ -172,6 +178,11 @@ import ContactForm from '~/components/base/ContactForm.vue'
           .phone, .email{
             display: flex;
             margin-bottom: .5rem;
+
+            @include breakpoint(phablet){
+              font-size: .9rem;
+              line-height: 1.2rem;
+            }
 
             svg{
               width: 2rem;
@@ -228,6 +239,7 @@ import ContactForm from '~/components/base/ContactForm.vue'
             padding-left: 1rem;
             padding-right: 1rem;
             font-size: 1.5rem;
+            line-height: 1.5rem;
             margin-bottom:.5rem;
           }
         }

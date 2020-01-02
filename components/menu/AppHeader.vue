@@ -57,8 +57,8 @@
       <div class="links" v-bind:style="{ display: display }">
           <h3>MENU</h3>
           <p @click="toggleMenu(), goToHome()">HOME</p>
-          <p @click="toggleMenu()">ABOUT MIGAA</p>
-          <button @click="toggleMenu(), toggleModal()">BOOK UNIT</button>
+          <p @click="toggleMenu(), goToAbout()">ABOUT MIGAA</p>
+          <button @click="toggleMenu(), toggleModal(), bookUnit()">BOOK UNIT</button>
       </div>
 
       <div class="links-background" @click="toggleMenu()" v-bind:style="{ display: display }">
@@ -85,13 +85,18 @@
         return{
           display:'',
           toggle_open : true,
-          toggle_close: false
+          toggle_close: false,
+          selected_unit:''
         }
       },
 
       methods:{
         goToHome(){
           this.$router.replace('/')
+        },
+
+        goToAbout(){
+          this.$router.replace('/about')
         },
         toggleMenu(){
           const mq = window.matchMedia( "(min-width: 50em)" );
@@ -132,6 +137,10 @@
               this.display = 'none';
             }
 
+        },
+
+        bookUnit(){
+          this.$store.commit('status/setSelectedUnit', this.selected_unit)
         },
 
         toggleModal(){

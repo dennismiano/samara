@@ -9,7 +9,7 @@
                 <h3>Introduction</h3>
                 <p>The Samara Estate, Migaa is a brilliantly thought out housing project tucked away in the beautiful, green, luscious Kiambu county. It is a project developed on 18.98 acres of land and set to house a total of 1824 units comprising of 2 bedroom and 3 bedroom apartments. The blocks are conveniently spaced to ensure ample natural light penetrates to every room of every unit</p>
                 <p>Aptly located within a golf course, Samara is a private gated estate, proficiently designed to be a self-sufficient community, with every amenity you need carefully considered. The estate perfectly blends together aspects of nature, golf, family and luxurious living; all at an affordable cost.</p>
-                <nuxt-link to="/"><p>Read More...</p></nuxt-link>
+                <nuxt-link to="/about"><p>Read More...</p></nuxt-link>
 
                 <div class="intro-text-background">
 
@@ -93,7 +93,7 @@
                       </div>
 
                       <div class="book-button">
-                          <button @click="openBookingModal()">Book Unit</button>
+                          <button @click="openBookingModal(), book2Br()">Book Unit</button>
                       </div>
                   </div>
 
@@ -106,12 +106,12 @@
                       </div>
 
                       <div class="house-design-content">
-                          <h3>2 Bedroom (57sqm)</h3>
-                          <p>KES. 2.75M</p>
+                          <h3>3 Bedroom (74.5sqm)</h3>
+                          <p>KES. 3,75M</p>
                       </div>
 
                       <div class="book-button">
-                          <button @click="openBookingModal()">Book Unit</button>
+                          <button @click="openBookingModal(), book3Br()">Book Unit</button>
                       </div>
                   </div>
 
@@ -134,7 +134,7 @@ import BookingForm from '~/components/bookings/BookingForm.vue'
 export default {
   data(){
     return{
-
+      selected_unit:''
     }
   },
 
@@ -152,7 +152,15 @@ export default {
     toggleModal(){
       this.$store.commit('status/openBookingModal')
     },
+    book2Br(){
+      this.selected_unit = '2 Bedroom'
+      this.$store.commit('status/setSelectedUnit', this.selected_unit)
+    },
 
+    book3Br(){
+      this.selected_unit = '3 Bedroom'
+      this.$store.commit('status/setSelectedUnit', this.selected_unit)
+    },
     openBookingModal(){
       this.$store.commit('status/openBookingModal')
     }
@@ -168,6 +176,7 @@ export default {
     font-family:$primary-font;
     margin:0;
   }
+
 
   .intro{
     display: flex;
@@ -207,12 +216,23 @@ export default {
           border-bottom: 1px solid $white;
           position: relative;
           z-index: 999;
+          color: $primary-color;
+
+          @include breakpoint(phablet){
+            font-size: 1.5rem;
+          }
         }
 
         p{
           margin-bottom: 1rem;
           position: relative;
           z-index: 999;
+
+          @include breakpoint(phablet){
+            font-size: .9rem;
+            line-height: 1.2rem;
+            padding-top: .5rem;
+          }
         }
 
         .intro-text-background{
@@ -244,11 +264,17 @@ export default {
           margin-left: 0;
           padding-top: 2rem;
           padding-bottom: 1rem;
+          padding-left: 1rem;
+          padding-right:1rem;
         }
 
         h2{
           color: $secondary-color;
           font-size: 2rem;
+
+          @include breakpoint(phablet){
+            font-size: 1.5rem;
+          }
         }
 
         .amenities-wrapper{
@@ -277,6 +303,11 @@ export default {
                 display: flex;
                 align-items: center;
                 width: 100%;
+
+                p{
+                  font-size: .9rem;
+                  line-height: 1.2rem;
+                }
               }
 
               &:last-child{

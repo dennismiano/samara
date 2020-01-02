@@ -262,7 +262,7 @@ h1,h2,h3,h4,h5,h5,li,p,input{
       background-color: $primary-color;
       padding: 1rem;
       padding-left: 0rem;
-      margin-top: -5rem;
+      margin-top: -3rem;
 
       @include breakpoint(tablet){
         width: 100%;
@@ -273,7 +273,7 @@ h1,h2,h3,h4,h5,h5,li,p,input{
       .features-header{
         margin-left: 2rem;
         color:$secondary-color;
-        margin-bottom: 1rem;
+        margin-bottom: .4rem;
 
         @include breakpoint(tablet){
           margin-left: 0;
@@ -281,7 +281,7 @@ h1,h2,h3,h4,h5,h5,li,p,input{
 
         h3{
           color: $secondary-color;
-          font-size: 2rem;
+          font-size: 1.5rem;
         }
 
       }
@@ -301,6 +301,8 @@ h1,h2,h3,h4,h5,h5,li,p,input{
           min-height: 3rem;
           display: flex;
           margin-left: -1.5rem;
+          border-radius: 50%;
+          border: 2px solid $white;
           justify-content: center;
           align-items: center;
           background-color: $secondary-color;
@@ -314,6 +316,7 @@ h1,h2,h3,h4,h5,h5,li,p,input{
         .feature-text{
           color:$white;
           margin-left: .5rem;
+          font-size: .9rem;
           line-height: 1.2rem;
 
           @include breakpoint(mobileonly){
