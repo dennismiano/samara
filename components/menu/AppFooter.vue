@@ -88,19 +88,8 @@
             </div>
 
           <form class="contact-form-content">
-              <div class="form-group">
-                <input type="text" placeholder="your name">
-              </div>
-
-              <div class="form-group">
-                <input type="text" placeholder="email">
-              </div>
-
-              <div class="form-group">
-                <textarea placeholder="your message"></textarea>
-              </div>
-
-              <button>Send Message</button>
+              <ContactForm
+              />
           </form>
         </div>
       </div>
@@ -111,7 +100,9 @@
 
 import ContactForm from '~/components/base/ContactForm.vue'
     export default {
-
+      components:{
+        ContactForm
+      }
     }
 </script>
 

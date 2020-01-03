@@ -1,7 +1,7 @@
 <template>
     <div class="admin-menu-wrapper">
       <div class="admin-menu-header">
-        <img src="/svg/admin-logo.svg">
+        <img src="/svg/logo-white.svg">
 
 
 <!--MOBILE TOGGLE BUTTON SVG -->
@@ -15,12 +15,12 @@
 
 
       <div class="admin-menu-links" v-bind:style="{ display: display }">
-        <nuxt-link to="/admin" class="router-links-wrapper">
+        <div @click="gotoDashboard(), toggleMenu()" class="router-links-wrapper">
     <!--DASHBOARD ICON SVG -->
             <svg id="Capa_1" class="admin-menu-icon" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><title>dashboard-icon</title><path d="M420,132.25a18.48,18.48,0,0,0-23.47-2.2c-27.65,18.84-166.32,113.6-181.22,128.5a55.43,55.43,0,0,0,78.39,78.39C308.6,322,403.36,183.36,422.2,155.72A18.48,18.48,0,0,0,420,132.25ZM267.56,310.81a18.48,18.48,0,0,1-26.13-26.13c5.79-5.72,45.16-33.8,93.6-67.47C301.36,265.65,273.29,305,267.56,310.81Z"/><path d="M103.21,383.68,80.4,394.81A198.62,198.62,0,0,1,67.94,226.9l26.14,12.54a18.48,18.48,0,1,0,16-33.32l-25.8-12.38A199.8,199.8,0,0,1,236,99v27.79a18.48,18.48,0,0,0,37,0V99a197.26,197.26,0,0,1,63.53,16.74,18.48,18.48,0,1,0,15.2-33.68A236.31,236.31,0,0,0,58.07,429a18.47,18.47,0,0,0,23.46,6.34l37.88-18.48a18.48,18.48,0,1,0-16.2-33.21Z"/><path d="M470.15,200.53a18.48,18.48,0,1,0-33.68,15.2,198.9,198.9,0,0,1-7.95,179.21l-23.81-11.34A18.48,18.48,0,0,0,388.83,417l38.8,18.48a18.47,18.47,0,0,0,23.3-6.41,235.94,235.94,0,0,0,19.22-228.5Z"/></svg>
       <!--MOBILE TOGGLE BUTTON SVG -->
             <p class="link-router"> Dashboard </p>
-        </nuxt-link>
+        </div>
 
 <!--
         <router-link to="/products" class="router-links-wrapper">
@@ -34,22 +34,41 @@
           <p class="link-router"> Shop</p>
         </router-link>
 -->
-          <nuxt-link to="/admin/messages" class="router-links-wrapper">
+          <div @click="gotoBookings(), toggleMenu()" class="router-links-wrapper">
+
+            <svg class="admin-menu-icon" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+               width="380.832px" height="380.832px" viewBox="0 0 380.832 380.832" style="enable-background:new 0 0 380.832 380.832;"
+               xml:space="preserve">
+                <g>
+                  <g>
+                    <path d="M320.159,30.864h-47.243V12.5c0-6.904-5.597-12.5-12.5-12.5s-12.5,5.596-12.5,12.5v18.364h-45V12.5
+                      c0-6.904-5.597-12.5-12.5-12.5c-6.903,0-12.5,5.596-12.5,12.5v18.364h-45V12.5c0-6.904-5.597-12.5-12.5-12.5
+                      s-12.5,5.596-12.5,12.5v18.364H60.673c-6.903,0-12.5,5.597-12.5,12.5v324.968c0,6.903,5.597,12.5,12.5,12.5h259.486
+                      c6.903,0,12.5-5.597,12.5-12.5V43.364C332.659,36.461,327.062,30.864,320.159,30.864z M307.659,355.832H73.173V55.864h34.743
+                      v14.59c0,6.904,5.597,12.5,12.5,12.5s12.5-5.596,12.5-12.5v-14.59h45v14.59c0,6.904,5.597,12.5,12.5,12.5
+                      c6.903,0,12.5-5.596,12.5-12.5v-14.59h45v14.59c0,6.904,5.597,12.5,12.5,12.5s12.5-5.596,12.5-12.5v-14.59h34.743V355.832z"/>
+                    <path d="M264.416,139.758h-148c-6.903,0-12.5,5.597-12.5,12.5c0,6.903,5.597,12.5,12.5,12.5h148c6.903,0,12.5-5.597,12.5-12.5
+                      C276.916,145.355,271.319,139.758,264.416,139.758z"/>
+                    <path d="M264.416,209.758h-148c-6.903,0-12.5,5.598-12.5,12.5c0,6.903,5.597,12.5,12.5,12.5h148c6.903,0,12.5-5.597,12.5-12.5
+                      C276.916,215.355,271.319,209.758,264.416,209.758z"/>
+                    <path d="M264.416,279.758h-148c-6.903,0-12.5,5.598-12.5,12.5c0,6.903,5.597,12.5,12.5,12.5h148c6.903,0,12.5-5.597,12.5-12.5
+                      C276.916,285.355,271.319,279.758,264.416,279.758z"/>
+                  </g>
+                </g>
+            </svg>
+
+                 <p class="link-router">Bookings</p>
+          </div>
+
+          <div @click="gotoMessages(), toggleMenu()" class="router-links-wrapper">
 
               <svg id="Capa_1" class="admin-menu-icon" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><title>messages-icon</title><path d="M419.85,91.47H103.3C76.13,91.47,54,112.69,54,138.78V359.42c0,26.09,22.1,47.31,49.27,47.31H419.85c27.17,0,49.27-21.22,49.27-47.31V138.78C469.11,112.69,447,91.47,419.85,91.47Zm0,273.5H103.3c-4,0-7.5-2.59-7.5-5.54V168L239,288.83a16.31,16.31,0,0,0,10.51,3.84h24.18a16.32,16.32,0,0,0,10.51-3.84L427.34,168V359.42C427.34,362.37,423.84,365,419.85,365ZM261.57,251.2l-139.25-118h278.5Z"/></svg>
 
-                 <p class="link-router">Messages</p>
-          </nuxt-link>
+                 <p class="link-router">Enquiries</p>
+          </div>
+        </div>
 
-          <nuxt-link to="/admin/subscribers" class="router-links-wrapper">
-
-              <svg class="admin-menu-icon" id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><title>subscribers</title><path d="M126.62,187a50.68,50.68,0,1,0-50.68-50.68A50.74,50.74,0,0,0,126.62,187Zm0-75.49a24.81,24.81,0,1,1-24.81,24.81,24.83,24.83,0,0,1,24.81-24.81Zm0,0"/><path d="M255.11,155.74a60.37,60.37,0,1,0-60.37-60.37,60.44,60.44,0,0,0,60.37,60.37Zm0-94.87a34.5,34.5,0,1,1-34.5,34.5,34.53,34.53,0,0,1,34.5-34.5Zm0,0"/><path d="M421.72,202.27H349a33.35,33.35,0,0,0-12.52,2.43,38.87,38.87,0,0,0-35.67-23.52H209.44a38.85,38.85,0,0,0-35.41,23,33.35,33.35,0,0,0-11-1.88H90.28a33.56,33.56,0,0,0-33.52,33.52V303A33.44,33.44,0,0,0,73.88,332.3V430a12.94,12.94,0,0,0,12.94,12.94h79.64A12.94,12.94,0,0,0,179.39,430V332.3c.63-.35,1.24-.72,1.84-1.11a38.51,38.51,0,0,0,10.93,8.08V464.06A12.94,12.94,0,0,0,205.09,477H305.18a12.94,12.94,0,0,0,12.94-12.94V339.28a38.61,38.61,0,0,0,11.61-8.81,33.92,33.92,0,0,0,2.89,1.84V430a12.94,12.94,0,0,0,12.94,12.94h79.64A12.94,12.94,0,0,0,438.12,430V332.3A33.44,33.44,0,0,0,455.24,303V235.79a33.56,33.56,0,0,0-33.52-33.52ZM170.63,303.14a7.73,7.73,0,0,1-6.36,7.44,12.94,12.94,0,0,0-10.76,12.75v93.72H99.75V323.34A12.94,12.94,0,0,0,89,310.59,7.73,7.73,0,0,1,82.63,303V235.79a7.66,7.66,0,0,1,7.65-7.65H163a7.66,7.66,0,0,1,7.64,7.56Zm143.12,1.37A13.06,13.06,0,0,1,303,317.26,12.94,12.94,0,0,0,292.24,330V451.12H218V330a12.94,12.94,0,0,0-10.76-12.75,13.07,13.07,0,0,1-10.76-12.75v-1.33s0-.09,0-.14V235.79c0-.06,0-.12,0-.18V220a13,13,0,0,1,12.94-12.94h91.38A13,13,0,0,1,313.76,220ZM429.37,303a7.73,7.73,0,0,1-6.36,7.54,12.93,12.93,0,0,0-10.76,12.75v93.72H358.49V323.34a12.94,12.94,0,0,0-10.76-12.75,7.73,7.73,0,0,1-6.36-7.54V235.79a7.66,7.66,0,0,1,7.65-7.65h72.71a7.66,7.66,0,0,1,7.65,7.65V303Zm0,0"/><path d="M385.35,187a50.68,50.68,0,1,0-50.68-50.68A50.74,50.74,0,0,0,385.35,187Zm0-75.49a24.81,24.81,0,1,1-24.81,24.81,24.84,24.84,0,0,1,24.81-24.81Zm0,0"/>
-              </svg>
-
-                 <p class="link-router">Subscribers</p>
-          </nuxt-link>
-
-
+        <div @click="toggleMenu()" class="admin-menu-background" v-bind:style="{ display: display }">
         </div>
 
 
@@ -69,20 +88,42 @@
 
       data(){
         return {
-            display : '',
-            height:''
+            display : ''
         }
       },
 
       methods: {
         toggleMenu(){
-          if(this.display == '' || this.display == 'none'){
-            this.display = 'block';
-          }
-          else {
-            this.display = 'none';
-          }
+          const mq = window.matchMedia( "(min-width: 50em)" );
 
+          if (mq.matches) {
+            //window is more than 500px;
+
+            } else {
+              if(this.display == '' || this.display == 'none'){
+                this.display = 'block';
+
+                //this.toggle_close = !this.toggle_close
+                //this.toggle_open = !this.toggle_open
+              }
+              else {
+                this.display = 'none';
+                //this.toggle_open = !this.toggle_open
+                //this.toggle_close = !this.toggle_close
+              }
+            }
+        },
+
+        gotoDashboard(){
+          this.$router.replace('/admin')
+        },
+
+        gotoBookings(){
+          this.$router.replace('/admin/bookings')
+        },
+
+        gotoMessages(){
+          this.$router.replace('/admin/messages')
         }
       },
         mounted() {
@@ -94,8 +135,12 @@
 <style lang="scss" scoped>
 //CHECKING
 
-@import '~/assets/sass/app.scss';
+  @import "~/assets/sass/app.scss";
 
+  h1,h1,h3,h4,h5,h5,li,p{
+    font-family:$primary-font;
+    margin:0;
+  }
 
   .admin-menu-wrapper{
     overflow-y: auto;
@@ -109,7 +154,7 @@
     }
 
     .admin-menu-header{
-      background-color: $black-gray;
+      background-color: #30373a;
       justify-content: center;
       align-items: center;
       display: flex;
@@ -118,21 +163,27 @@
 
       @include breakpoint(tablet){
         justify-content: space-between;
-        height: 7rem;
+        height: auto;
       }
 
       img{
         height: 4rem;
         width:auto;
+
+        @include breakpoint(tablet){
+          height: 3rem;
+          width:auto;
+        }
       }
 
       .mobile-menu-icon {
         fill:none;
         display: none;
-        stroke:$primary-color;
+        stroke:$secondary-color;
         stroke-miterlimit:10;
         stroke-width:5px;
-        width:3rem;
+        height:2rem;
+        width: auto;
 
         @include breakpoint(tablet){
           display: block;
@@ -143,24 +194,24 @@
 
     .admin-menu-links{
       height: 87vh;
-      background-color: $black-gray;
+      background-color: #30373a;
 
       @include breakpoint(tablet){
         display: none;
-        position: absolute;
+        position: fixed;
         left:0;
-        height: calc(100% - 7em);
-        top: 7rem;
-        width:100%;
+        height: 100vh;
+        top: 0;
+        width:12rem;
+        z-index: 9999;
+        padding-top: 3rem;
       }
 
     .router-links-wrapper{
 
       display: flex;
       align-items: center;
-      padding: 1rem;
-      border-top: 1px solid $gray;
-      border-bottom: 1px solid $gray;
+      padding: .5rem 1rem;
 
       &:hover{
         background-color:lighten($black-gray, 10);
@@ -176,11 +227,23 @@
       }
 
       .link-router{
-        padding-left:1rem;
+        padding-left:.5rem;
         color:$white;
       }
 
     }
+  }
+
+  .admin-menu-background{
+    display: none;
+    position: fixed;
+    top:0;
+    left: 0;
+    width:100%;
+    height: 100vh;
+    z-index: 999;
+    opacity: .7;
+    background-color: $black;
   }
 
 </style>

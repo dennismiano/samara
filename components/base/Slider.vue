@@ -8,9 +8,9 @@
 
             <div class="slider-content-wrapper-text">
               <div class="slider-text">
-                <h2> {{ currentSlide.h2 }} </h2>
-                <p> {{ currentSlide.p }} </p>
-                <button @click="openBookingModal()">BOOK UNIT</button>
+                  <h2> {{ currentSlide.h2 }} </h2>
+                  <p> {{ currentSlide.p }} </p>
+                  <button @click="openBookingModal()">BOOK UNIT</button>
               </div>
 
               <div class="slider-content-wrapper-text-bg">
@@ -194,10 +194,12 @@
     .slider-content-wrapper-text{
       position: relative;
       z-index: 9;
-      width: 60%;
+      width: 100%;
       height: 100%;
       display: flex;
       align-items: flex-end;
+      justify-content: center;
+
 
       svg{
         fill: $secondary-color;
@@ -211,13 +213,13 @@
 
 
       .slider-text{
-          margin-left: 5%;
+          width: 1020px;
+          padding: 1rem;
           margin-bottom: 5rem;
-          margin-right: 5%;
 
         h2{
-          font-size: 3rem;
-          line-height: 3.2rem;
+          font-size: 2rem;
+          line-height: 2.2rem;
           color:$white;
           font-weight: 700;
 

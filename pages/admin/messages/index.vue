@@ -13,7 +13,7 @@
         :name="message.name"
         :email="message.email"
         :message="message.message"
-        :time="message.time"
+        :time="message.created_at"
       />
 
     </div>
@@ -84,13 +84,16 @@ export default {
 <style lang="scss" scoped>
   @import '~/assets/sass/app.scss';
 
-  h1,h2,h3,h4,h5,h6,p{
+  @import "~/assets/sass/app.scss";
+
+  h1,h1,h3,h4,h5,h5,li,p{
+    font-family:$primary-font;
     margin:0;
   }
 
   .messages-container{
     padding:5%;
-    background-color: $light-gray;
+    background-color: darken($light-gray, 5%);
 
     .messages-header{
       background-color: $white;
@@ -99,7 +102,7 @@ export default {
       justify-content: space-between;
 
       h4{
-        font-size: 2rem;
+
       }
     }
   }

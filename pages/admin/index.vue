@@ -21,6 +21,11 @@
 
 @import "~/assets/sass/app.scss";
 
+h1,h1,h3,h4,h5,h5,li,p{
+  font-family:$primary-font;
+  margin:0;
+}
+
   .dashboard-container{
     display: flex;
     align-items: center;

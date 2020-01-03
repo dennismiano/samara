@@ -160,7 +160,7 @@ import axios from '~/plugins/axios.js';
           name:'',
           email:'',
           phone_number:'',
-          unit:'3 br'
+          unit:'3 Bedroom'
         }
       }
     },
@@ -190,6 +190,7 @@ import axios from '~/plugins/axios.js';
         if(this.two_bedroom_selected === false){
           this.two_bedroom_selected = true
           this.three_bedroom_selected = false
+          this.booking_details.unit = '2 Bedroom'
         }
       },
 
@@ -197,6 +198,7 @@ import axios from '~/plugins/axios.js';
         if(this.three_bedroom_selected === false){
           this.two_bedroom_selected = false
           this.three_bedroom_selected = true
+          this.booking_details.unit = '3 Bedroom'
         }
       }
       ,addBooking(){

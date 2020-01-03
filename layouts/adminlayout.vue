@@ -7,7 +7,7 @@
 
 <script>
 
-import AdminMenu from '~/layouts/Admin/AdminMenu.vue'
+import AdminMenu from '~/components/menu/AdminMenu.vue'
 
 export default {
   components: {
@@ -24,7 +24,7 @@ export default {
   .admin-panel{
     display: flex;
     flex-flow: row nowrap;
-    height: 100vh;
+    min-height: 100vh;
 
 
     @include breakpoint(tablet){
@@ -32,7 +32,7 @@ export default {
     }
   }
   .admin-menu-wrapper{
-    width:20%;
+    width:15rem;
     height: 100vh;
 
     @include breakpoint(tablet){
@@ -41,7 +41,7 @@ export default {
     }
   }
   .admin-contents{
-    width:80%;
+    width: calc(100% - 15rem);
     overflow-y: auto;
     height: 100vh;
 
