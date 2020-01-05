@@ -34,6 +34,9 @@ export default {
   .admin-menu-wrapper{
     width:15rem;
     height: 100vh;
+    position: fixed;
+    top:0;
+    left: 0;
 
     @include breakpoint(tablet){
       width:100%;
@@ -43,10 +46,12 @@ export default {
   .admin-contents{
     width: calc(100% - 15rem);
     overflow-y: auto;
-    height: 100vh;
+    min-height: 100vh;
+    margin-left: 15rem;
 
     @include breakpoint(tablet){
       width:100%;
+      margin-left: 0;
     }
   }
 </style>

@@ -1,6 +1,11 @@
 export const state = () => ({
 
   modal_open: false,
+  notification_open: false,
+  notification:{
+    type:'',
+    message:''
+  },
   selected: false,
   selected_unit: '',
   unit_selection: '3 Bedroom'
@@ -9,6 +14,18 @@ export const state = () => ({
 export const mutations={
     openBookingModal(state){
       state.modal_open = true
+    },
+
+    openNotificationModal(state, payload){
+      state.notification.type = payload.type
+      state.notification.message = payload.message
+      state.notification_open = true
+    },
+
+    closeNotificationModal(state){
+      state.notification.type = ''
+      state.notification.message = ''
+      state.notification_open = false
     },
 
     closeBookingModal(state){

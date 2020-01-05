@@ -212,12 +212,37 @@
                 </div>
             </div>
         </div>
+
+        <BookingForm
+            v-if="openModal"
+            @close_modal = "closeModal()"
+        />
+
+        <Notification
+          v-if="openNotification"
+        />
+
     </div>
 </template>
 
 <script>
-  export default{
+  import BookingForm from '~/components/bookings/BookingForm.vue'
+  import Notification from '~/components/notifications/Notification.vue'
 
+  export default{
+    computed:{
+      openModal(){
+        return this.$store.state.status.modal_open;
+      },
+
+      openNotification(){
+        return this.$store.state.status.notification_open;
+      }
+    },
+
+    components:{
+      BookingForm, Notification
+    }
   }
 </script>
 
@@ -236,6 +261,7 @@ h1,h2,h3,h4,h5,h5,li,p,input{
     background-image: url('/img/features-header.jpg');
     background-size: cover;
     background-position: center;
+    background-color: $gray;
 
     @include breakpoint(tablet){
       height: 150px;

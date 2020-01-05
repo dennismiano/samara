@@ -46,7 +46,7 @@ import BookingForm from '~/components/bookings/BookingForm.vue'
         return this.$store.state.status.modal_open;
       }
     },
-    
+
     components:{
       BookingForm
     }
@@ -90,7 +90,7 @@ import BookingForm from '~/components/bookings/BookingForm.vue'
       .over-view{
         width:30%;
         background-color: $primary-color;
-        padding: 2rem;
+        padding: 1rem;
         margin-top: -5rem;
 
 
@@ -133,9 +133,9 @@ import BookingForm from '~/components/bookings/BookingForm.vue'
 
         @include breakpoint(tablet){
           width: 100%;
-          padding-left: 2rem;
+          padding-left: 1rem;
           margin-top:3rem;
-          padding-right: 2rem;
+          padding-right: 1rem;
         }
 
         h4{

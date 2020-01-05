@@ -27,13 +27,11 @@
             </div>
 
             <div class="booking-form">
-                <h3>Complete Booking</h3>
-
                 <div class="name">
                   <label>Name:</label>
 
                   <div class="form-group">
-                    <input type="text" placeholder="name" v-model="booking_details.name">
+                    <input type="text" placeholder="full name" v-model="booking_details.name">
                   </div>
                 </div>
 
@@ -49,7 +47,7 @@
                   <label>Phone Number:</label>
 
                   <div class="form-group">
-                    <input type="text" placeholder="phone-number" v-model="booking_details.phone_number">
+                    <input type="text" placeholder="e.g +254 720 000 000" v-model="booking_details.phone_number">
                   </div>
                 </div>
 
@@ -66,7 +64,7 @@
                         <div @click="selectTwoBr()" class="two-bedroom">
                           <div class="two-bedroom-content">
                             <h4>2 Bedroom</h4>
-                            <p>57 Square Meters</p>
+                            <p class="sq-space">57 Sqm</p>
                           </div>
 
                           <svg v-if="two_bedroom_selected" class="active-tick" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -99,7 +97,7 @@
                         <div @click="selectThreeBr()" class="three-bedroom">
                           <div class="three-bedroom-content">
                             <h4>3 Bedroom</h4>
-                            <p>74.5  Square Meters</p>
+                            <p class="sq-space">74.5  Sqm</p>
                           </div>
 
                           <svg v-if="three_bedroom_selected" class="active-tick" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -132,7 +130,7 @@
                 </div>
 
                 <div class="book-button">
-                    <button type="button" @click.prevent="addBooking">Complete Booking</button>
+                    <button type="button" @click.prevent="addBooking">{{ button_status }}</button>
                 </div>
             </div>
 
@@ -155,12 +153,17 @@ import axios from '~/plugins/axios.js';
 
         two_bedroom_selected: false,
         three_bedroom_selected: true,
+        button_status: 'Book',
 
         booking_details:{
           name:'',
           email:'',
           phone_number:'',
           unit:'3 Bedroom'
+        },
+        payload:{
+          type: '',
+          message:''
         }
       }
     },
@@ -200,11 +203,20 @@ import axios from '~/plugins/axios.js';
           this.three_bedroom_selected = true
           this.booking_details.unit = '3 Bedroom'
         }
-      }
-      ,addBooking(){
+      },
+
+      addBooking(){
+        this.button_status = 'Booking'
         return axios.post('/house/add/booking',{details:this.booking_details}).then((res)=>{
+
+            this.button_status = 'Book'
+
           if (res.data.msg) {
-            alert(res.data.msg);
+
+            this.payload.type = 'success'
+            this.payload.message = res.data.msg
+            this.$store.commit('status/closeBookingModal');
+            this.$store.commit('status/openNotificationModal', this.payload);
 
           }
           if (res.data.error) {
@@ -246,26 +258,27 @@ import axios from '~/plugins/axios.js';
     align-items: center;
 
     .booking-details{
-      width: 80%;
+      width: 1020px;
       background-color: $primary-color;
-      padding: 5%;
+      padding: 2rem;
       z-index: 999;
       position: relative;
       display: flex;
-      overflow-x: scroll;
+      margin-left: 1rem;
+      margin-right: 1rem;
 
       .close-icon{
         position: absolute;
-        right: -1.5rem;
-        top:-1.5rem;
+        right: 1.3rem;
+        top:1.2rem;
         width: 3rem;
         height: 3rem;
-        fill: $white;
-        z-index: 999999999;
+        fill: $secondary-color;
+        z-index: 9999999;
 
         @include breakpoint(phablet){
-          right: 1rem;
-          top:1rem;
+          right: .5rem;
+          top:.5rem;
           width: 2.5rem;
           height: 2.5rem;
         }
@@ -275,7 +288,7 @@ import axios from '~/plugins/axios.js';
         width: 90%;
         flex-wrap: wrap;
         padding: 0;
-        overflow-x: scroll;
+        overflow-y: auto;
       }
 
       .booking-intro{
@@ -301,19 +314,19 @@ import axios from '~/plugins/axios.js';
             }
 
           h2{
-            line-height: 2rem;
-            font-size: 2.1rem;
+            line-height: 2.2rem;
+            font-size: 2rem;
             color:$secondary-color;
 
             @include breakpoint(phablet){
-              line-height: 1.5rem;
-              font-size: 1.7rem;
+              line-height: 1.4rem;
+              font-size: 1.3rem;
             }
           }
         }
 
         .bookings-logo{
-          width:13rem;
+          width:10rem;
           height: auto;
 
           @include breakpoint(phablet){
@@ -330,15 +343,12 @@ import axios from '~/plugins/axios.js';
         z-index: 99;
 
         @include breakpoint(phablet){
-          margin-left: 1rem;
-          margin-right: 1rem;
           margin-top: 1rem;
-          margin-bottom: 1rem;
+          margin-bottom: .5rem;
           width:100%;
-
-
+          padding-left: 1rem;
+          padding-right: 1rem;
         }
-
         .name, .email, .number{
           display: flex;
           flex-flow: column;
@@ -354,13 +364,18 @@ import axios from '~/plugins/axios.js';
 
           input{
             @include form-inputs;
-            height: 3rem;
+            height: 2.5rem;
+
+            &::placeholder{
+              margin-left: 0;
+            }
           }
         }
 
         .unit-details{
           background-color: $light-gray;
           padding:.5rem;
+          border-left: 3px solid $primary-color;
 
           .select-form{
 
@@ -371,13 +386,17 @@ import axios from '~/plugins/axios.js';
                 flex-wrap: wrap;
               }
 
+              .sq-space{
+                color:$dark-gray;
+              }
+
               .two-bedroom{
                 display: flex;
                 justify-content: space-between;
                 background-color: darken($light-gray, 10);
                 align-items: center;
                 width: 49%;
-                padding: .5rem;
+                padding: .2rem .5rem;
 
                 @include breakpoint(phablet){
                   width: 100%;
@@ -411,7 +430,7 @@ import axios from '~/plugins/axios.js';
                 align-items: center;
                 width: 49%;
                 margin-left: 2%;
-                padding: .5rem;
+                padding: .2rem .5rem;
 
                 @include breakpoint(phablet){
                   width: 100%;
@@ -443,10 +462,13 @@ import axios from '~/plugins/axios.js';
         }
 
         .book-button{
-          margin-top: 1rem;
+          margin-top: .5rem;
 
           button{
             @include system-button($primary-color, $white);
+            height: 2.5rem;
+            padding-left:3rem;
+            padding-right:3rem;
           }
         }
       }

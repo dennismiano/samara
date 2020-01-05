@@ -1,29 +1,33 @@
 <template>
   <div class="messages-container">
-    <div class="" v-if="messages != undefined">
-      <div class="messages-header">
-        <h4>Total Messages</h4>
-        <h4>0</h4>
+    <div v-if="!loading">
+      <div class="" v-if="messages != undefined">
+        <div class="messages-header">
+          <h4>Total Messages</h4>
+          <h4>{{ messages.length }}</h4>
+        </div>
+
+        <AdminMessages
+          v-for="message in messages"
+          :key="message.id"
+          :id="message.id"
+          :name="message.name"
+          :email="message.email"
+          :message="message.message"
+          :time="message.created_at"
+        />
+
       </div>
-
-      <AdminMessages
-        v-for="message in messages"
-        :key="message.id"
-        :id="message.id"
-        :name="message.name"
-        :email="message.email"
-        :message="message.message"
-        :time="message.created_at"
-      />
-
-    </div>
-    <div class="" v-else>
-      <p>No messages yet.</p>
-
+      <div class="" v-else>
+        <p>No messages yet.</p>
+      </div>
     </div>
 
 
-
+    <div class="" v-if="loading">
+      <div class="" is="loader">
+      </div>
+    </div>
 
   </div>
 </template>
@@ -31,14 +35,15 @@
 <script>
 
 import AdminMessages from "~/components/admins/AdminMessages"
-import axios from '~/plugins/axios.js';
+import axios from '~/plugins/axios.js'
+import loader from '~/components/loader/Loader.vue'
 
 export default {
 
   layout: 'adminlayout',
 
   components:{
-    AdminMessages
+    AdminMessages, loader
   },
 
   /*asyncData(){
@@ -48,7 +53,8 @@ export default {
   },*/
   data(){
     return{
-      messages:undefined
+      messages:undefined,
+      loading: true
     }
   },
   methods:{
@@ -57,6 +63,7 @@ export default {
         if (res.data.messages) {
           console.log(res.data);
           this.messages=res.data.messages;
+          this.loading = false
 
         }
         if (res.data.error) {

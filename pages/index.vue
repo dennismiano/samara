@@ -124,28 +124,37 @@
           @close_modal = "closeModal()"
       />
 
+      <Notification
+        v-if="openNotification"
+      />
   </div>
 </template>
 
 <script>
 import Slider from '~/components/base/Slider.vue'
 import BookingForm from '~/components/bookings/BookingForm.vue'
+import Notification from '~/components/notifications/Notification.vue'
 
 export default {
   data(){
     return{
-      selected_unit:''
+      selected_unit:'',
+      message: 'Booking has been successful'
     }
   },
 
   computed:{
     openModal(){
       return this.$store.state.status.modal_open;
+    },
+
+    openNotification(){
+      return this.$store.state.status.notification_open;
     }
   },
 
   components:{
-    Slider, BookingForm
+    Slider, BookingForm, Notification
   },
 
   methods:{
