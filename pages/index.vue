@@ -84,7 +84,7 @@
 
               <div class="house-design-wrapper">
                   <div class="house-design">
-                      <div class="house-design-image">
+                      <div class="house-design1-image">
                       </div>
 
                       <div class="house-design-content">
@@ -102,7 +102,7 @@
                   </div>
 
                   <div class="house-design">
-                      <div class="house-design-image">
+                      <div class="house-design2-image">
                       </div>
 
                       <div class="house-design-content">
@@ -380,8 +380,24 @@ export default {
             width: 100%;
           }
 
-          .house-design-image{
+          .house-design1-image{
             background-color: $gray;
+            width:100%;
+            background-image: url('/img/2br.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 20rem;
+
+            @include breakpoint(phablet){
+              height: 15rem;
+            }
+          }
+
+          .house-design2-image{
+            background-color: $gray;
+            background-image: url('/img/3br.jpg');
+            background-size: cover;
+            background-position: center;
             width:100%;
             height: 20rem;
 

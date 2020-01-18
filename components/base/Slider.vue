@@ -3,6 +3,7 @@
       <div class="slides" v-for="number in [currentNumber]"  :key='number' @mouseover="stopSlider" @mouseleave="startSlider">
 
           <div class="slide" :style="{ backgroundImage: 'url('+ currentSlide.img + ')'}">
+
             <div class="slide-bg-transition">
             </div>
 
@@ -166,15 +167,13 @@
 
     .slide{
       display: flex;
-      background-position: right center;
+      background-position: left center;
       background-size: cover;
-      justify-content: flex-end;
       background-image: url(/img/home-slider.jpg);
-      align-items: flex-start;
-      flex-flow:column;
       font-family: $source-pro;
       height: 80vh;
       position: relative;
+      justify-content: center;
 
       @include breakpoint(tablet){
         height:60vh;
@@ -194,11 +193,16 @@
     .slider-content-wrapper-text{
       position: relative;
       z-index: 9;
-      width: 100%;
+      width: 1020px;
       height: 100%;
       display: flex;
-      align-items: flex-end;
+      align-items: center;
       justify-content: center;
+
+          @include breakpoint(phablet){
+              align-items: flex-end;
+              justify-content: flex-start;
+          }
 
 
       svg{
@@ -213,15 +217,25 @@
 
 
       .slider-text{
-          width: 1020px;
           padding: 1rem;
           margin-bottom: 5rem;
+          display: flex;
+          flex-flow: column;
+          align-items: center;
+          margin-top:10rem;
+
+          @include breakpoint(phablet){
+            align-items: flex-start;
+          }
 
         h2{
           font-size: 2rem;
           line-height: 2.2rem;
           color:$white;
           font-weight: 700;
+          background-color: $secondary-color;
+          padding:.3rem;
+
 
           @include breakpoint(tablet){
             font-size: 3rem;
@@ -232,18 +246,23 @@
           }
 
           @include breakpoint(mobileonly){
-            font-size: 1.7rem;
-            line-height: 1.8rem;
+            font-size: 1.4rem;
+            line-height: 1.3rem;
           }
         }
 
         p{
-          color:$white;
+          color:$primary-color;
           margin-bottom: 1rem;
           line-height: 1.3rem;
+          background-color: $white;
+          padding:.3rem;
+          margin-top: .5rem;
 
           @include breakpoint(phablet){
-            font-size: $primary-font-size;
+            font-size: .9rem;
+            line-height: 1rem;
+            margin-top: 0rem;
           }
         }
 
