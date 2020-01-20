@@ -60,7 +60,7 @@
             <p @click="toggleMenu(), goToHome()">HOME</p>
             <p @click="toggleMenu(), goToAbout()">ABOUT US</p>
             <p @click="toggleMenu(), goToProjects()">PROJECT</p>
-            <p @click="toggleMenu(), goToAbout()">GALLERY</p>
+            <p @click="toggleMenu(), goToGallery()">GALLERY</p>
             <p @click="toggleMenu(), goToAbout()">CONTACTS</p>
             <button @click="toggleMenu(), toggleModal(), bookUnit()">BOOK UNIT</button>
         </div>
@@ -106,6 +106,10 @@
 
         goToProjects(){
           this.$router.replace('/projects')
+        },
+
+        goToGallery(){
+          this.$router.replace('/gallery')
         },
         toggleMenu(){
           const mq = window.matchMedia( "(min-width: 50em)" );

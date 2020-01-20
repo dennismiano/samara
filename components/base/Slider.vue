@@ -51,19 +51,19 @@
           slides: [
             {
               'h2': 'The Samara Estate',
-              'p': 'An assurance of quality living',
+              'p': 'Quality living',
               'img': '/img/slider1.jpg'
             },
 
             {
-              'h2': 'Sports Recreational Facilities',
-              'p': 'property boasts of a modern gym facility within the shopping mall ',
+              'h2': 'The Samara Estate',
+              'p': 'Property boasts of a modern gym facility within the shopping mall ',
               'img': '/img/slider2.jpg'
             },
 
             {
-              'h2': 'The Landscaping',
-              'p': 'incorporates the finest aspects of luscious green grass, scattered trees and beautiful architecture.',
+              'h2': 'The Samara Estate',
+              'p': 'Incorporates the finest aspects of luscious green grass, scattered trees and beautiful architecture.',
               'img': '/img/slider3.jpg'
             },
 
@@ -101,7 +101,7 @@
 
         methods: {
           startSlider() {
-           this.timer = setInterval(this.next, 3000);
+           this.timer = setInterval(this.next, 4000);
           },
 
           stopSlider() {
@@ -155,7 +155,7 @@
 
 
   .slider-wrapper{
-    height:80vh;
+    height:60vh;
     position: relative;
     background-color: #989898;
 
@@ -171,7 +171,7 @@
       background-size: cover;
       background-image: url(/img/home-slider.jpg);
       font-family: $source-pro;
-      height: 80vh;
+      height: 60vh;
       position: relative;
       justify-content: center;
 

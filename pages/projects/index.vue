@@ -125,6 +125,7 @@
       h2{
         background-color: $secondary-color;
         padding: .5rem 1rem;
+        color: $primary-color;
       }
     }
   }

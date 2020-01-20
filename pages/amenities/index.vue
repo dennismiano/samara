@@ -280,8 +280,11 @@ h1,h2,h3,h4,h5,h5,li,p,input{
   .amenities-content{
     display: flex;
     justify-content: center;
-    margin-bottom: 3rem;
-    border-top: 1rem solid $secondary-color;
+    margin-bottom: 5rem;
+
+    @include breakpoint(phablet){
+
+    }
 
     .features{
       width: 30%;

@@ -6,7 +6,6 @@
         <div class="about-samara-content">
           <div class="about-samara-content-container">
             <div class="over-view">
-                <h4>The Samara Estate</h4>
                 <h2>Overview</h2>
 
                   <p>The captivatingly beautiful architectural designs were prepared by a leading architectural firm in the country. The units are brilliantly designed for comfort, luxury, giving you the opportunity to build your dream home. Samara Estate, in line with the government’s big 4 agenda on housing, is deliberate in putting up a gated community for affordable and adequate living.
@@ -67,9 +66,13 @@ import BookingForm from '~/components/bookings/BookingForm.vue'
     width:100%;
     height: 250px;
     background-color: $gray;
-    background-image: url('/img/about-samara-header.jpg');
+    background-image: url('/img/slider3.jpg');
     background-position: center;
     background-size: cover;
+
+    @include breakpoint(phablet){
+      height: 200px;
+    }
   }
 
   .about-samara-content{
@@ -90,13 +93,14 @@ import BookingForm from '~/components/bookings/BookingForm.vue'
       .over-view{
         width:30%;
         background-color: $primary-color;
-        padding: 1rem;
+        padding: 2rem;
         margin-top: -5rem;
-
 
         @include breakpoint(tablet){
           width: 100%;
-          border-top: 1rem solid $secondary-color;
+          padding: 1rem;
+          padding-top:2rem;
+          padding-bottom: 2rem;
         }
 
         h4{
@@ -116,11 +120,11 @@ import BookingForm from '~/components/bookings/BookingForm.vue'
         p{
           color: $white;
           line-height: 1.2rem;
+          text-align: left;
+          text-align: justify;
 
             @include breakpoint(phablet){
               font-size: .9rem;
-              text-align: justify;
-              text-align: left;
             }
         }
       }
@@ -141,6 +145,8 @@ import BookingForm from '~/components/bookings/BookingForm.vue'
         h4{
           font-size: 1.4rem;
           line-height: 1.6rem;
+          text-align: left;
+          text-align: justify;
 
           @include breakpoint(phablet){
             font-size: 1.2rem;

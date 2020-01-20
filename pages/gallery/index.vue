@@ -2,7 +2,7 @@
     <div>
         <div class="gallery-header">
           <div class="gallery-header-container">
-            <h3>Gallery</h3>
+            <h2>Gallery</h2>
           </div>
         </div>
 
@@ -85,16 +85,23 @@
     display: flex;
     height: 200px;
     justify-content: center;
-    background-image: url('/img/projects-cover.jpg');
+    background-image: url('/img/album/images/image3.jpg');
     background-position: center;
     background-size: cover;
+
+    @include breakpoint(phablet){
+      height: 150px;
+    }
+
 
     .gallery-header-container{
       width:1020px;
       display: flex;
       align-items:flex-end;
+      margin-left: 1rem;
+      margin-right: 1rem;
 
-      h3{
+      h2{
         background-color: $secondary-color;
         padding: .5rem 2rem;
         color: $primary-color;
@@ -117,6 +124,10 @@
         margin-bottom:.5rem;
         text-align: center;
         font-size: 1.5rem;
+      }
+
+      @include breakpoint(phablet){
+        margin-top: 2rem;
       }
     }
   }
