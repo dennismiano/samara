@@ -93,6 +93,28 @@
           </form>
         </div>
       </div>
+
+      <div class="logos">
+        <div class="logos-wrapper">
+            <div class="contractor-logo-holder">
+              <p>Contractor:</p>
+
+              <div class="contractor-logo">
+                  <img src="/svg/avg-logo.svg">
+              </div>
+            </div>
+
+            <div class="partners-logo-holder">
+              <p>Partners:</p>
+
+              <div class="partners-logos">
+                  <img src="/svg/property-point-logo.svg">
+                  <img src="/svg/spl-logo.svg">
+                  <img src="/svg/hfc-logo.svg">
+              </div>
+            </div>
+        </div>
+      </div>
   </div>
 </template>
 
@@ -117,7 +139,8 @@ import ContactForm from '~/components/base/ContactForm.vue'
   .footer-section{
       width: 100%;
       display: flex;
-      justify-content: center;
+      align-items: center;
+      flex-flow: column;
       background-color: $primary-color;
       border-top:  1rem solid lighten($primary-color, 10);
 
@@ -262,6 +285,75 @@ import ContactForm from '~/components/base/ContactForm.vue'
             margin-top: 1rem;
           }
         }
+    }
+
+    .logos{
+      background-color: $white;
+      width:100%;
+      display: flex;
+      justify-content: center;
+      padding-top:2rem;
+      padding-bottom: 2rem;
+      border-bottom: 1rem solid $primary-color;
+
+      .logos-wrapper{
+        display: flex;
+
+        .contractor-logo-holder{
+          display: flex;
+          flex-flow: column;
+          align-items: flex-end;
+          border-right: 1px solid $primary-color;
+          padding-right:1rem;
+
+          @include breakpoint(phablet){
+            padding-right:.5rem;
+          }
+
+          p{
+            font-weight: 600;
+            color: $primary-color;
+          }
+
+          img{
+            height: 3rem;
+            width:auto;
+
+            @include breakpoint(phablet){
+              height: 1.5rem;
+            }
+          }
+        }
+        .partners-logo-holder{
+          display: flex;
+          flex-flow: column;
+          margin-left:1rem;
+
+          @include breakpoint(phablet){
+            margin-left:.5rem;
+          }
+
+          p{
+            font-weight: 600;
+            color: $primary-color;
+          }
+
+          .partners-logos{
+            display: flex;
+
+            img{
+              height: 3rem;
+              width:auto;
+              margin-right: 1rem;
+
+              @include breakpoint(phablet){
+                height: 1.5rem;
+                margin-right: .2rem;
+              }
+            }
+          }
+        }
+      }
     }
   }
 </style>
