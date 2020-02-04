@@ -97,7 +97,6 @@
       <div class="logos">
         <div class="logos-wrapper">
             <div class="contractor-logo-holder">
-              <p>Contractor:</p>
 
               <div class="contractor-logo">
                   <img src="/svg/avg-logo.svg">
@@ -105,12 +104,12 @@
             </div>
 
             <div class="partners-logo-holder">
-              <p>Partners:</p>
+              <p>In Partnership with:</p>
 
               <div class="partners-logos">
+                  <img src="/svg/hfc-logo.svg">
                   <img src="/svg/property-point-logo.svg">
                   <img src="/svg/spl-logo.svg">
-                  <img src="/svg/hfc-logo.svg">
               </div>
             </div>
         </div>
@@ -298,12 +297,12 @@ import ContactForm from '~/components/base/ContactForm.vue'
 
       .logos-wrapper{
         display: flex;
+        align-items: center;
 
         .contractor-logo-holder{
           display: flex;
           flex-flow: column;
           align-items: flex-end;
-          border-right: 1px solid $primary-color;
           padding-right:1rem;
 
           @include breakpoint(phablet){
@@ -327,22 +326,27 @@ import ContactForm from '~/components/base/ContactForm.vue'
         .partners-logo-holder{
           display: flex;
           flex-flow: column;
-          margin-left:1rem;
+          padding-left:1rem;
+          border-left: 1px solid $primary-color;
 
           @include breakpoint(phablet){
-            margin-left:.5rem;
+            padding-left:.5rem;
           }
 
           p{
-            font-weight: 600;
+            font-weight:300;
             color: $primary-color;
+
+            @include breakpoint(phablet){
+              font-size: .8rem;
+            }
           }
 
           .partners-logos{
             display: flex;
 
             img{
-              height: 3rem;
+              height: 2rem;
               width:auto;
               margin-right: 1rem;
 
