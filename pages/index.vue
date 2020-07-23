@@ -79,7 +79,7 @@
           <div class="house-designs-container">
               <div class="house-designs-intro">
                 <h2>House Designs</h2>
-                <p>Choose between 1Br & 2Br</p>
+                <p>Choose between 2Br & 3Br</p>
               </div>
 
               <div class="house-design-wrapper">
@@ -88,8 +88,8 @@
                       </div>
 
                       <div class="house-design-content">
-                          <h3>2 Bedroom (57sqm)</h3>
-                          <p>KES. 2.75M</p>
+                          <h3>2 Bedroom (59sqm)</h3>
+                          <p>KES. 2.95M</p>
                       </div>
 
                       <div class="book-button">
@@ -106,8 +106,8 @@
                       </div>
 
                       <div class="house-design-content">
-                          <h3>3 Bedroom (74.5sqm)</h3>
-                          <p>KES. 3,75M</p>
+                          <h3>3 Bedroom (76sqm)</h3>
+                          <p>KES. 3.95M</p>
                       </div>
 
                       <div class="book-button">
