@@ -53,7 +53,6 @@
 
                   <div class="contact-details">
                       <p>sales@addedvaluegroup.co</p>
-                      <p>dm@greyrockadvisors.co</p>
                   </div>
                 </div>
 
@@ -100,7 +99,7 @@
             <div class="contractor-logo-holder">
 
               <div class="contractor-logo">
-                  <img src="/svg/avg-logo.svg">
+                  <img src="/svg/spl-logo.svg">
               </div>
             </div>
 
@@ -108,9 +107,10 @@
               <p>In Partnership with:</p>
 
               <div class="partners-logos">
-                  <img src="/svg/hfc-logo.svg">
+                  <img src="/svg/sic-logo.svg">
+                  <img src="/svg/gov-logo.svg">
+                  <img src="/svg/avg-logo.svg">
                   <img src="/svg/property-point-logo.svg">
-                  <img src="/svg/spl-logo.svg">
               </div>
             </div>
         </div>
