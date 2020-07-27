@@ -1,7 +1,7 @@
 {
-  "name": "Samara Estate",
+  "name": "nuxtGeneric",
   "version": "1.0.0",
-  "description": "Quality living",
+  "description": "generic nuxt app",
   "author": "koikoishogun",
   "private": true,
   "scripts": {

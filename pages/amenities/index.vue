@@ -88,7 +88,7 @@
                           </div>
                       </div>
 
-
+                    <!--
                       <div class="amenity">
                           <div class="amenity-icon">
                               <img class="amenity-icon-image" src="/svg/restaurants.svg">
@@ -97,7 +97,7 @@
                               <p>Restaurants and eating spaces</p>
                           </div>
                       </div>
-
+                    -->
 
                       <div class="amenity">
                           <div class="amenity-icon">
@@ -126,15 +126,17 @@
                           </div>
                       </div>
 
+
                       <div class="amenity">
                           <div class="amenity-icon">
                               <img class="amenity-icon-image" src="/svg/mall.svg">
                           </div>
                           <div class="amenity-text">
-                              <p>A shopping centre with a supermarket </p>
+                              <p>A commercial centre with essential shops & restaurant spaces</p>
                           </div>
                       </div>
 
+                      <!--
                       <div class="amenity">
                           <div class="amenity-icon">
                               <img class="amenity-icon-image" src="/svg/banks.svg">
@@ -180,16 +182,18 @@
                               <p>State of the art swimming pool</p>
                           </div>
                       </div>
+                    -->
 
                       <div class="amenity">
                           <div class="amenity-icon">
                               <img class="amenity-icon-image" src="/svg/basketball.svg">
                           </div>
                           <div class="amenity-text">
-                              <p>2 basketball courts & 2 volley ball courts</p>
+                              <p>Sports recreational facilities</p>
                           </div>
                       </div>
 
+                      <!--
                       <div class="amenity">
                           <div class="amenity-icon">
                               <img class="amenity-icon-image" src="/svg/gym.svg">
@@ -198,6 +202,7 @@
                               <p>Gym, a spa and sauna</p>
                           </div>
                       </div>
+                    -->
 
                       <div class="amenity">
                           <div class="amenity-icon">
@@ -287,7 +292,7 @@ h1,h2,h3,h4,h5,h5,li,p,input{
     }
 
     .features{
-      width: 30%;
+      width: 40%;
       background-color: $primary-color;
       padding: 1rem;
       padding-left: 0rem;
@@ -356,7 +361,7 @@ h1,h2,h3,h4,h5,h5,li,p,input{
     }
 
     .amenities{
-      width:70%;;
+      width:60%;;
       padding: 1rem;
       margin-top: 3rem;
 
@@ -378,7 +383,7 @@ h1,h2,h3,h4,h5,h5,li,p,input{
         .amenity{
           display: flex;
           align-items: center;
-          width:32%;
+          width:49%;
           min-height: 4rem;
           margin-right: 2%;
 
@@ -391,7 +396,7 @@ h1,h2,h3,h4,h5,h5,li,p,input{
             }
           }
 
-          &:nth-child(3n){
+          &:nth-child(2n){
             margin-right: 0;
           }
 

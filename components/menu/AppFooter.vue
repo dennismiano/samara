@@ -52,7 +52,8 @@
                   </svg>
 
                   <div class="contact-details">
-                      <p>sales@addedvaluegroup.co</p>
+                      <p>samara@addedvaluegroup.co</p>
+                      <p>brian@addedvaluegroup.co</p>
                   </div>
                 </div>
 
